@@ -73,7 +73,7 @@ func installService() {
 
 func initDebugLog() {
 	if os.Getenv("WCSA_DEBUG") == "1" {
-		home, err := os.UserHomeDir()
+		home, err := utils.AgentHomeDir()
 		if err != nil {
 			return
 		}

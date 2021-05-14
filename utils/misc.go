@@ -4,6 +4,7 @@ import (
 	cryptornd "crypto/rand"
 	"encoding/hex"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -36,4 +37,12 @@ func RandomString(n int) string {
 		}
 	}
 	return string(bytes)
+}
+
+func AgentHomeDir() (string,error) {
+	var home, err = os.UserHomeDir();
+	if (err != nil) {
+		return "",err;
+	}
+	return (home + "\\home"),nil;
 }

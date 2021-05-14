@@ -7,6 +7,7 @@ require (
 	github.com/bi-zone/wmi v1.1.4
 	github.com/fullsailor/pkcs7 v0.0.0-20190404230743-d7302db945fa
 	github.com/hattya/go.notify v0.0.0-20200507123844-18670158b53e
+	github.com/josephspurrier/goversioninfo v1.2.0 // indirect
 	github.com/linuxkit/virtsock v0.0.0-20180830132707-8e79449dea07
 	golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37
 	golang.org/x/sys v0.0.0-20210223212115-eede4237b368

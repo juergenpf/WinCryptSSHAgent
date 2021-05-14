@@ -3,14 +3,16 @@ package sshagent
 import (
 	"errors"
 	"fmt"
-	"golang.org/x/crypto/ssh"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	"github.com/buptczq/WinCryptSSHAgent/utils"
+	"golang.org/x/crypto/ssh"
 )
 
 func loadCertFile(filename string) (*ssh.Certificate, error) {
-	home, err := os.UserHomeDir()
+	home, err := utils.AgentHomeDir();
 	if err != nil {
 		return nil, err
 	}
