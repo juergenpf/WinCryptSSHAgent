@@ -66,7 +66,7 @@ func cygwinHandshake(conn net.Conn, uuid []byte) error {
 }
 
 func (s *Cygwin) Run(ctx context.Context, handler func(conn io.ReadWriteCloser)) error {
-	home, err := os.UserHomeDir()
+	home, err := utils.AgentHomeDir()
 	if err != nil {
 		return err
 	}

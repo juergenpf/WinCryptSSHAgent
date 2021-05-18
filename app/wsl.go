@@ -19,7 +19,7 @@ type WSL struct {
 }
 
 func listenUnixSock(filename string) (string, net.Listener, error) {
-	home, err := os.UserHomeDir()
+	home, err := utils.AgentHomeDir();
 	if err != nil {
 		return "", nil, err
 	}
