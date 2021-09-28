@@ -44,7 +44,9 @@ Execute following commands, provide new PIN and PUK when prompted:
  1. Plug your YubiKey back.
  1. Run Certificate Manager Tool (`certmgr.msc`) and in *Certificates - Current User \ Personal \ Certificates* your certificate named **SSH key** should be visible.
 
-***NOTE:*** If the certificate is not visible, make sure [Allow ECC certificates to be used for logon and authentication](https://docs.microsoft.com/en-us/windows/security/identity-protection/smart-cards/smart-card-group-policy-and-registry-settings#allow-ecc-certificates-to-be-used-for-logon-and-authentication) in *Group Policy Editor (gpedit.msc) > Computer Configuration > Administrative Templates > Windows Components > Smart Card* is enabled.
+***NOTE:*** Please make sure [Allow ECC certificates to be used for logon and authentication](https://docs.microsoft.com/en-us/windows/security/identity-protection/smart-cards/smart-card-group-policy-and-registry-settings#allow-ecc-certificates-to-be-used-for-logon-and-authentication) in *Group Policy Editor (gpedit.msc) > Computer Configuration > Administrative Templates > Windows Components > Smart Card* is enabled.
+
+***NOTE#2:*** You should also install the [YubiKey Smart Card Minidriver](https://www.yubico.com/support/download/smart-card-drivers-tools/) if you want to work with ECC algorithm certificates.
 
 ### Confiure YubiKey for SSH in WLS and target machine
 
@@ -53,11 +55,11 @@ Execute following commands, provide new PIN and PUK when prompted:
 
     Line like `export SSH_AUTH_SOCK=/mnt/c/Users/Jane/wincrypt-wsl.sock` will be copeid into your clipboard.
 
-1. Run your WSL console and execute command from previosu step.
+1. Run your WSL console and execute command from previous step.
 1. `ssh` into your target machine, authenticate with credentials used until now.
 1. Right click on *WinCrypt SSH Agent*'s icon in tray and select *Show public keys settings* then press OK.
 
-    All known keys in SSH format will be copied. You need to locate one named **SHA key**.
+    All known keys in SSH format will be copied. You need to locate one named **SSH key**.
 
 1. Copy line with *SSH key* into `~\.ssh\authorized_keys` on target machine.
 1. Disconnect from target machine.
